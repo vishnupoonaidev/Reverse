@@ -83,5 +83,7 @@ main>.container {
     width: 100%;
 }
 
-
+.borderblue{
+   border: #009DC4;
+}
 

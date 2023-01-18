@@ -24,7 +24,7 @@
 <!-- ===== Nav section ====== -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img src="img/favabefore.png" class="d-inline-block align-text-top" width="30" height="24">  REVERSE</a>
+        <a class="navbar-brand" href="index.html"><img src="img/favabefore.png" class="d-inline-block align-text-top" width="30" height="24">  REVERSE</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -58,17 +58,57 @@
             <div class="col-lg-8">
                 <pre class="Line-numbers">
                     <code class="language-javascript">
-                        //Call HelloWorld
-                        function HelloWorld(){
-                          alert("hello World");
-                            }
+                        //get the string from the page 
+//controller function
+function getValue(){
+
+    document.getElementById("alert").classList.add("invisible")
+
+    let userString = document.getElementById("userString").value;
+
+    let revString = reverseString(userString);
+    
+    displayString(revString);
+
+}
+
+
+//reverse the string
+//logic function
+function reverseString(userString){
+ let revString = [];
+
+ //reverse a string using a for loop
+ for (let index = userString.length -1; index >=  0; index--) {
+    revString += userString[index];
+ }
+     return revString;
+}
+
+
+//display the reverses string to the user
+//view function
+function displayString(revString){
+
+    //write message to the page
+    document.getElementById("msg").innerHTML = `your reversed string is: ${revString}`;
+
+    //show the alert box
+   document.getElementById("alert").classList.remove("invisible");
+}
                     </code>
                 </pre>       
             </div>
             <div class="col-lg-4">
-               <p>The Code is structured in one function.</p>
-               <h4>Hello World</h4>
-               <p>Hello world is a function that displays an alert with a message of "hello World"</p>
+               <p>The Code is structured in three functions.</p>
+               <h4>Function one - getValue</h4>
+               <p>This function gets the value from the user by getting the element by the id for the textbox on the html page</p>
+               <h4>Function two- reverseString</h4>
+               <p>This function reverses the entered string by using a for loop that starts at the end of the array for the string by using the lengt function of a string.
+                It then saves the string array from the end to the start as it iterates throught the loop.
+                <h4>Function Three - displayString</h4>
+               <p>This function gets reversed string from the second function then it displays the function in the alert message by its ID and also removes the invisible class list function from the alert box.</p>
+               </p>
             </div>
         </div>
     </div>
